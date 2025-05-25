@@ -34,17 +34,17 @@ class KeyboardController(controller.Controller):
         pass
 
     def register(self, key):
-        if key == pygame.K_UP:
+        if key == pygame.K_w:
             self.action_queue.put(characters.Action.STEP_FORWARD)
-        elif key == pygame.K_DOWN:
+        elif key == pygame.K_s:
             self.action_queue.put(characters.Action.STEP_BACKWARD)
-        elif key == pygame.K_LEFT:
+        elif key == pygame.K_a:
             self.action_queue.put(characters.Action.STEP_LEFT)
-        elif key == pygame.K_RIGHT:
+        elif key == pygame.K_d:
             self.action_queue.put(characters.Action.STEP_RIGHT)
-        elif key == pygame.K_z:
+        elif key == pygame.K_LEFT:
             self.action_queue.put(characters.Action.TURN_LEFT)
-        elif key == pygame.K_x:
+        elif key == pygame.K_RIGHT:
             self.action_queue.put(characters.Action.TURN_RIGHT)
         elif key == pygame.K_SPACE:
             self.action_queue.put(characters.Action.ATTACK)

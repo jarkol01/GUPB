@@ -205,7 +205,15 @@ class Renderer:
         return pygame.display.set_mode(window_size, pygame.RESIZABLE)
 
     def _time_to_cycle(self, game: games.Game) -> int:
-        return self.ms_per_time_unit * game.current_state.value
+        if pygame.key.get_pressed()[pygame.K_SPACE]:
+            speed_multiplier = 1/15
+        elif pygame.key.get_pressed()[pygame.K_LSHIFT]:
+            speed_multiplier = 15
+        elif pygame.key.get_pressed()[pygame.K_RSHIFT]:
+            speed_multiplier = 1/45
+        else:
+            speed_multiplier = 1
+        return self.ms_per_time_unit * game.current_state.value * speed_multiplier
 
     def _render_starting_screen(self):
         wait_for_start_key = True

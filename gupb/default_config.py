@@ -14,6 +14,7 @@ from gupb.controller import Keramzytowy_mocarz
 
 
 keyboard_controller = keyboard.KeyboardController()
+garek_controller = garek.GarekController("Garek")
 
 CONFIGURATION = {
     'arenas': [
@@ -26,17 +27,17 @@ CONFIGURATION = {
         kirby_learning.KirbyLearningController("KirbyLearning"),
         norgul.NorgulController("Norgul"),
         reinforced_rogue.ReinforcedRogueController("ReinforcedRogue"),
-        garek.GarekController("Garek"),
         rustler.Rustler("Rustler"),
         bupg.BUPGController("BUPG"),
         roomba.RoombaController("Roomba"),
         pirat.PiratController("Pirat"),
         Keramzytowy_mocarz.Keramzytowy_mocarz("KERAMZYTOWY_MOCARZ"),
+        garek_controller,
     ],
     'start_balancing': False,
-    'visualise': False,
-    'show_sight': None,
-    'runs_no': 1000,
+    'visualise': True,
+    'show_sight': garek_controller,
+    'runs_no': 100,
     'profiling_metrics': [],
 }
 
